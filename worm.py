@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 15 19:46:28 2020
+
+@author: nickk
+"""
+
+import sys
+import time
+
+indent = 0  # How many spaces to indent.
+indentIncreasing = True  # Whether the indentation is increasing or not.
+
+try:
+    while True:  # The main program loop:
+        print(' ' * indent, end=' ')
+        print("********")
+        time.sleep(0.1)  # Pause for 1/10th of a second.
+
+        if indentIncreasing:
+            # Increase the number of spaces
+            indent = indent + 1
+            if indent == 20:
+                # change direction
+                indentIncreasing = False
+
+        else:
+            # Decrease the number of spaces:
+            indent = indent - 1
+            if indent == 0:
+                # change direction
+                indentIncreasing = True
+
+except KeyboardInterrupt:
+    sys.exit()
